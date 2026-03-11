@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import OptionsMenu from "./OptionsMenu";
 
 interface MenuButtonProps {
   children: React.ReactNode;
@@ -56,7 +55,6 @@ ${hover
 export default function GameMenu() {
 
 const [mounted,setMounted] = useState(false);
-const [activeOption,setActiveOption] = useState<string | null>(null);
 
 
 useEffect(()=>{
@@ -68,34 +66,16 @@ setMounted(true);
 // MENU ACTIONS
 // --------------------
 
-const handlePlay = ()=>{
-
-console.log("Start Game");
-
-};
-
-const handleOptions = ()=>{
-
-setActiveOption("options");
-
-};
-
-const handleCredits = ()=>{
-
-setActiveOption("credits");
-
+const handleInfoClick = (topic: string) => {
+  // Por ahora, solo mostraremos un mensaje en la consola.
+  // En el futuro, esto podría abrir una ventana modal con información.
+  console.log(`Mostrando información sobre: ${topic}`);
 };
 
 
 // --------------------
 // RENDER OPTIONS MENU
 // --------------------
-
-if(activeOption==="options"){
-
-return <OptionsMenu onBack={()=>setActiveOption(null)} />
-
-}
 
 if(!mounted) return null;
 
@@ -151,23 +131,26 @@ Enter the Digital Realm
 
 {/* BUTTONS */}
 
-<div className="flex flex-col gap-6">
+<div className="flex flex-col gap-6 pb-24 md:pb-0">
 
-<MenuButton onClick={handlePlay}>
-
-▶ Play
-
+<MenuButton onClick={() => handleInfoClick("Mejorar UX")}>
+  ¿Cómo Mejorar UX?
 </MenuButton>
 
-<MenuButton onClick={handleOptions}>
-
-⚙ Options
-
+<MenuButton onClick={() => handleInfoClick("Ventajas")}>
+  Ventajas Usuario
 </MenuButton>
 
-<MenuButton onClick={handleCredits}>
+<MenuButton onClick={() => handleInfoClick("Buenas Prácticas")}>
+  Buenas Prácticas
+</MenuButton>
 
-★ Credits
+<MenuButton onClick={() => handleInfoClick("Ejemplos")}>
+  Ejemplos
+</MenuButton>
+
+<MenuButton onClick={() => handleInfoClick("Herramientas")}>
+  Herramientas
 
 </MenuButton>
 
