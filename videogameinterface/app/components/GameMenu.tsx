@@ -1,6 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import UxScreen from "./Ux";
+import VentajasScreen from "./Ventajas";
+import BuenasPracticasScreen from "./buenasPracticas";
+import EjemplosScreen from "./ejemplos";
+import HerramientasScreen from "./herramientas";
 
 interface MenuButtonProps {
   children: React.ReactNode;
@@ -55,6 +60,7 @@ ${hover
 export default function GameMenu() {
 
 const [mounted,setMounted] = useState(false);
+const [activeScreen, setActiveScreen] = useState<string | null>(null);
 
 
 useEffect(()=>{
@@ -69,13 +75,33 @@ setMounted(true);
 const handleInfoClick = (topic: string) => {
   // Por ahora, solo mostraremos un mensaje en la consola.
   // En el futuro, esto podría abrir una ventana modal con información.
-  console.log(`Mostrando información sobre: ${topic}`);
+  setActiveScreen(topic);
 };
 
 
 // --------------------
 // RENDER OPTIONS MENU
 // --------------------
+
+if (activeScreen === "Mejorar UX") {
+  return <UxScreen onBack={() => setActiveScreen(null)} />;
+}
+
+if (activeScreen === "Ventajas") {
+  return <VentajasScreen onBack={() => setActiveScreen(null)} />;
+}
+
+if (activeScreen === "Buenas Prácticas") {
+  return <BuenasPracticasScreen onBack={() => setActiveScreen(null)} />;
+}
+
+if (activeScreen === "Ejemplos") {
+  return <EjemplosScreen onBack={() => setActiveScreen(null)} />;
+}
+
+if (activeScreen === "Herramientas") {
+  return <HerramientasScreen onBack={() => setActiveScreen(null)} />;
+}
 
 if(!mounted) return null;
 
