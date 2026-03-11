@@ -9,27 +9,33 @@ export default function VentajasScreen({ onBack }: VentajasScreenProps) {
         <InfoPageSkeleton title="Ventajas para los Usuarios" onBack={onBack}>
             <ul className="list-disc space-y-6 pl-5">
                 <li>
-                    <strong className="text-white">Accesibilidad:</strong>
+                    <strong className="text-white">Decisiones más rápidas:</strong>
                     <p className="mt-1 text-cyan-300">
-                        Opciones como controles remapeables, subtítulos y modos para daltónicos hacen tu juego accesible a una audiencia mucho más amplia.
+                        Información clara y bien jerarquizada permite reaccionar en situaciones de alta presión sin hesitación.
                     </p>
                 </li>
                 <li>
-                    <strong className="text-white">Rendimiento Personalizable:</strong>
+                    <strong className="text-white">Menor frustración:</strong>
                     <p className="mt-1 text-cyan-300">
-                        Las opciones de video permiten que el juego funcione fluidamente en una gran variedad de ordenadores.
+                        Un diseño intuitivo reduce errores causados por confusión en los controles o la lectura del mapa.
                     </p>
                 </li>
                 <li>
-                    <strong className="text-white">Personalización de la Jugabilidad:</strong>
+                    <strong className="text-white">Mayor satisfacción:</strong>
                     <p className="mt-1 text-cyan-300">
-                        Ajustes como el nivel de dificultad permiten que tanto jugadores novatos como veteranos disfruten del reto a su medida.
+                        Animaciones de recompensa (subir de nivel, logros) generan una respuesta dopaminérgica y sensación de logro.
                     </p>
                 </li>
                 <li>
-                    <strong className="text-white">Comodidad:</strong>
+                    <strong className="text-white">Personalización accesible:</strong>
                     <p className="mt-1 text-cyan-300">
-                        Simplemente poder ajustar el volumen de la música o el brillo de la pantalla hace que la experiencia de juego sea mucho más cómoda.
+                        Interfaces adaptables (tamaño de HUD, modo daltónico, subtítulos) hacen el juego inclusivo para todos.
+                    </p>
+                </li>
+                <li>
+                    <strong className="text-white">Confianza e Inmersión:</strong>
+                    <p className="mt-1 text-cyan-300">
+                        Cuando la UI responde de forma consistente y predecible, el jugador confía en el juego y se sumerge más profundamente en la experiencia.
                     </p>
                 </li>
             </ul>
