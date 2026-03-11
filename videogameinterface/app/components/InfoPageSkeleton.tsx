@@ -28,7 +28,7 @@ return (
     </div>
 
     {/* Contenedor principal de la información */}
-    <div className="relative z-10 w-full max-w-4xl bg-black/50 border border-cyan-500/30 rounded-lg p-6 sm:p-8 text-left">
+    <div className="relative z-10 w-full max-w-4xl bg-black/50 border border-cyan-500/30 rounded-lg p-6 sm:p-8 text-left mb-8">
         {/* Título de la página (viene de las props) */}
         <h1
         className="text-4xl md:text-5xl font-black uppercase tracking-widest text-cyan-400 mb-8 text-center"
@@ -46,17 +46,17 @@ return (
         <div className="text-lg md:text-xl leading-relaxed space-y-6 text-cyan-200">
         {children}
         </div>
-    </div>
 
-    {/* Botón para volver */}
-    <div className="absolute bottom-6 sm:bottom-10 z-30">
-        <button
-        onClick={onBack}
-        className="px-8 py-3 border border-cyan-500 text-cyan-300
-        hover:bg-cyan-500/20 transition-all duration-300 rounded-md text-lg uppercase tracking-wider"
-        >
-        ⬅ Volver
-        </button>
+        {/* Botón para volver - Ahora dentro del contenedor */}
+        <div className="mt-12 flex justify-center">
+            <button
+            onClick={onBack}
+            className="px-8 py-3 border border-cyan-500 text-cyan-300
+            hover:bg-cyan-500/20 transition-all duration-300 rounded-md text-lg uppercase tracking-wider"
+            >
+            ⬅ Volver
+            </button>
+        </div>
     </div>
     </div>
 );
